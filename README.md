@@ -1,19 +1,55 @@
 # onis-printer
+
 bluetooth and native printer
+
 ## Installation
 
 ```sh
-npm install onis-printer
+npm install onis-printer or yarn add onis-printer
 ```
 
 ## Usage
 
 ```js
-import { multiply } from "onis-printer";
+import {
+  initPrinter,
+  printText,
+  connectBTPrinter,
+  initBtPrinter,
+  printNewLine,
+  setBold,
+  setAlign,
+  setSmall,
+  printLine,
+  setLineSpacing,
+  feedPaper,
+  getPairedDevice,
+} from 'onis-printer';
 
-// ...
+const result = await initPrinter();
 
-const result = await multiply(3, 7);
+await printText('text');
+
+const result = await connectBTPrinter();
+
+await initBtPrinter();
+
+await printNewLine();
+
+await setBold(true / false);
+
+// 100 - center, 101 - right, 102 - left
+await setAlign(100);
+
+await setSmall(true / false);
+
+await printLine();
+
+await setLineSpacing(30);
+
+await feedPaper();
+
+const result = await getPairedDevice();
 ```
 
 ## Contributing
@@ -26,4 +62,4 @@ MIT
 
 ---
 
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+Made with [Adyasuren](https://github.com/Adyasuren)
